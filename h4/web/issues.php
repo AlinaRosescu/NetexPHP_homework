@@ -1,13 +1,22 @@
 <?php
-require_once(dirname(__FILE__) . "/../util/dbconnect.php");
 
 require_once(dirname(__FILE__) . "/../db_model/issues.php");
+require_once(dirname(__FILE__) . "/../db_model/projects.php");
 $dbItems = getIssues();
-var_dump(getIssues());
+$dbProjects = getProjects();
 
 
 ?>
-
+<form method="get" action="" >
+    <select>
+        <option>All</option>
+        <?php
+            foreach($dbProjects as $dbProject) {
+                echo "<option>" . $dbProject['project'] . "</option>";
+            }
+        ?>
+    </select>
+</form>
 <table>
     <tbody>
         <tr>
