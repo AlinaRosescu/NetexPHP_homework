@@ -16,7 +16,7 @@ main {
 }
 
 /*------------ MENU ---------------*/
-#nav input {
+nav li {
     text-decoration: none;
     display: inline-block;
     margin-right: 5px;
@@ -26,10 +26,10 @@ main {
     border: 1px solid #A89993;
 }
 
-#nav input:hover {
+nav li:hover {
     background: #544C43;
     color: #FCE5CA;
-    border: 3px solid #A89993;
+    border: 1px solid #A89993;
 }
 
 /*------------ ASIDE ---------------*/
@@ -38,7 +38,7 @@ aside{
     float: left;
 
 }
-aside input {
+aside li {
     margin: 10px 0;
     padding: 5px 10px;
     background: #FCE5CA;
@@ -46,10 +46,10 @@ aside input {
     width: 100px;
 }
 
-aside input:hover {
+aside li:hover {
     color: #FCE5CA;
     background: #544C43;
-    border: 3px solid #A89993;
+    border: 1px solid #A89993;
 }
 
 /*------------ FORM ---------------*/
