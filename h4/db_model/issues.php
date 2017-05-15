@@ -15,7 +15,6 @@ function getIssues(){
 
     $mysqlConnection = getConnection();
     $result = mysqli_query($mysqlConnection, $query);
-    var_dump($result);
     closeConnection($mysqlConnection);
 
     if($result){
@@ -28,14 +27,13 @@ function getIssues(){
 }
 
 function getIssueProject() {
-    $query = "SELECT `issues.description`,`priorities.level`,`projects.type`,`statuses.type`
+    $query = "SELECT `issues.issue`,`priorities.priority`,`projects.project`,`statuses.status`
               FROM `issues`
               LEFT JOIN `complaints`
                 ON `issues.id = complaints.issue_id`
               LEFT JOIN `priorities`
                 ON `priorities.id = complaints.priotity_id`
               LEFT JOIN `statuses`
-                ON `statuses.id = complaints.status_id`
                 ON `statuses.id = complaints.status_id`
               LEFT JOIN `projects`
                 ON `projects.id = complaints.project_id`";
