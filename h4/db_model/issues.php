@@ -2,7 +2,7 @@
 require_once(dirname(__FILE__) . "/../util/dbconnect.php");
 
 function getIssues(){
-    $query = "SELECT issues.description,priorities.level,projects.type,statuses.type
+    $query = "SELECT issues.issue,priorities.priority,projects.project,statuses.status
               FROM issues
               LEFT JOIN complaints
                 ON issues.id = complaints.issue_id
@@ -15,8 +15,9 @@ function getIssues(){
 
     $mysqlConnection = getConnection();
     $result = mysqli_query($mysqlConnection, $query);
+    var_dump($result);
     closeConnection($mysqlConnection);
-var_dump($result);
+
     if($result){
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
