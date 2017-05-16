@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Form</title>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <style>
+    <style type="text/css">
         body {
             font-family: 'Lato', sans-serif;
             font-size: 16px;
@@ -43,11 +43,12 @@
 
 
         /*------------ ASIDE ---------------*/
-        aside{
-            max-width: 50px;
+        aside {
+            margin-top: 50px;
+            display: inline-block;
             float: left;
-
         }
+
         aside li {
             list-style: none;
             margin: 10px 0;
@@ -70,37 +71,63 @@
         }
 
         /*------------ FORM ---------------*/
-        h1 {
-            font-size: 26px;
-            text-align: center;
-        }
-
-        #add {
-            max-width: 50%;
-            margin: 30px auto;
-            padding: 20px;
-            text-align: center;
-            border-radius: 25px 5px;
-            border:1px solid #C2B4B5;
-        }
-
-        div {
-            margin: 15px 0;
-        }
-
-        input[type=text], input[type=email],
-        input[type=tel], textarea {
-            width: 70%;
-            float: right;
-            margin-left: 10px;
-        }
-
-        label {
-            margin:0 auto;
-            width: 70%;
-            text-align:right;
+        form {
             display: inline-block;
+            width: 50%;
+            margin: 50px auto;
         }
+
+         label > span  {
+            width: 150px;
+            text-align: left;
+            float: left;
+        }
+
+        fieldset {
+            border-radius: 10px;
+            margin: 0px 0px 10px 0px;
+            border: 1px solid #A89993;
+            padding: 20px;
+            background: #FFF4F4;
+        }
+
+        fieldset legend{
+            color: #544C43;
+            border-top: 1px solid #A89993;
+            border-left: 1px solid #A89993;
+            border-right: 1px solid #A89993;
+            border-radius: 5px 5px 0px 0px;
+            background: #fff4f4;
+            padding: 0px 8px 3px 8px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        input, select {
+            display: block;
+            float: left;
+            border: 1px solid #A89993;
+            outline: none;
+            color: #544C43;
+            padding: 5px 8px 5px 8px;
+            background: #FFEFF6;
+            width:50%;
+            margin-bottom: 15px;
+        }
+        input[type=submit] {
+            background: #FCE5CA;
+            color: #544C43;
+            border: 1px solid #A89993;
+            width: 100px;
+            border-radius: 5px;
+        }
+        input[type=submit]:hover {
+            color: #FCE5CA;
+            background: #544C43;
+            border: 1px solid #A89993;
+        }
+
+
 
         .button {
             padding: 8px 10px;
