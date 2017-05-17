@@ -9,10 +9,13 @@
             font-family: 'Lato', sans-serif;
             font-size: 16px;
             color: #544C43;
+            margin: 0;
+            padding: 0;
         }
 
         /*------------ MAIN ---------------*/
         main {
+            position: relative;
             max-width: 60%;
             min-height: 350px;
             margin: 30px auto;
@@ -24,6 +27,15 @@
         }
 
         /*------------ MENU ---------------*/
+        nav ul{
+            padding:0;
+            margin-top: 40px;
+            margin-bottom: 0;
+        }
+        nav {
+            display: inline-block;
+        }
+
         nav li {
             text-decoration: none;
             display: inline-block;
@@ -51,7 +63,7 @@
 
         aside li {
             list-style: none;
-            margin: 10px 0;
+            margin-bottom: 10px;
             padding: 5px 10px;
             background: #FCE5CA;
             color: #544C43;
@@ -66,18 +78,49 @@
             border: 1px solid #A89993;
         }
 
+        aside ul {
+            margin:0;
+        }
+
         aside ul a {
             text-decoration: none;
         }
 
+        /*------------ SECTION ---------------*/
+        h1 {
+            font-size: 22px;
+            margin: 0;
+        }
+
+        section {
+            display: inline-block;
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #A89993;
+            border-radius: 10px;
+            background: #FFF4F4;
+        }
+
+        #itemList li {
+            text-align: left;
+            padding-bottom: 5px;
+            padding-left: 3px;
+            font-size: 18px;
+        }
+
+        section ul {
+            margin-top: 30px;
+        }
+
         /*------------ FORM ---------------*/
-        form {
+        #add {
             display: inline-block;
             width: 50%;
             margin: 50px auto;
         }
 
-         label > span  {
+        label > span  {
             width: 150px;
             text-align: left;
             float: left;
@@ -129,25 +172,19 @@
 
 
 
-        .button {
-            padding: 8px 10px;
-            margin:4px;
-            background: #FCE5CA;
-            color: #544C43;
-            border: 1px solid #A89993;
-            border-radius: 5px;
+        /*------------- TABLE ----------------*/
+
+        #show {
+            display: block;
+            margin: 40px 0 20px 20px;
+            float: left;
+            width: 50%;
+            padding: 0;
         }
 
-        .button:hover {
-            margin:6px;
-            color: #FCE5CA;
-            background: #544C43;
-            border: 3px solid #A89993;
-        }
-
-        /*------------- SUBMIT ----------------*/
         table {
-            margin:0 auto;
+            margin-left: 20px;
+            margin-bottom: 20px;
             border-collapse: collapse;
         }
 

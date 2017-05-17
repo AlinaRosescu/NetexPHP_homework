@@ -3,27 +3,19 @@
 require_once(dirname(__FILE__) . "/../db_model/statuses.php");
 require_once(dirname(__FILE__) . "/../web/header.php");
 $dbItems = getStatuses();
-
-
 ?>
 
-    <table>
-        <tbody>
-        <tr>
-            <th>Issue</th>
-            <th>Status</th>
-        </tr>
+<section>
+    <h1>Registered statuses</h1>
+    <ul id="itemList">
         <?php
         foreach($dbItems as $dbItem) {
-            echo "<tr>";
-            foreach ($dbItem as $key=>$value) {
-                echo "<td>" . $value . "</td>";
-            }
-            echo "</tr>";
+            echo "<li>" . ucfirst($dbItem['status']) . "</li>";
         }
         ?>
-        </tbody>
-    </table>
+    </ul>
+</section>
+
 <?php
 require_once(dirname(__FILE__) . "/../web/footer.php");
 ?>

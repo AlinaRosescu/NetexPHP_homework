@@ -12,50 +12,51 @@ $dbStatuses = getStatuses();
 
 ?>
 
-<form name="issue" method="post" action="">
-    <fieldset><legend> Add new issue</legend>
-    <label for="issue">
-        <span>Issue</span>
-        <input type="text" name="issue" value="" />
-    </label>
+<section>
+    <h1> Add new issue</h1>
+    <form id="add" method="post" action="">
+        <label for="issue">
+            <span>Issue</span>
+            <input type="text" name="issue" value="" />
+        </label>
 
-    <label for="project">
-        <span>Project name</span>
-        <select name="project">
-            <?php
-            foreach($dbProjects as $dbProject) {
-                echo "<option>" . ucfirst($dbProject['project']) . "</option>";
-            }
-            ?>
-        </select>
-    </label>
+        <label for="project">
+            <span>Project name</span>
+            <select name="project">
+                <?php
+                foreach($dbProjects as $dbProject) {
+                    echo "<option>" . ucfirst($dbProject['project']) . "</option>";
+                }
+                ?>
+            </select>
+        </label>
 
-    <label for="priority">
-        <span>Priority level</span>
-        <select name="priority">
-            <?php
-            foreach($dbPriorities as $dbPriority) {
-                echo "<option>" . ucfirst($dbPriority['priority']). "</option>";
-            }
-            ?>
-        </select>
-    </label>
+        <label for="priority">
+            <span>Priority level</span>
+            <select name="priority">
+                <?php
+                foreach($dbPriorities as $dbPriority) {
+                    echo "<option>" . ucfirst($dbPriority['priority']). "</option>";
+                }
+                ?>
+            </select>
+        </label>
 
-    <label for="status">
-        <span>Status</span>
-        <select name="status">
-            <?php
-            foreach($dbStatuses as $dbStatus) {
-                echo "<option>" . ucfirst($dbStatus['status']) . "</option>";
-            }
-            ?>
-        </select>
-    </label>
+        <label for="status">
+            <span>Status</span>
+            <select name="status">
+                <?php
+                foreach($dbStatuses as $dbStatus) {
+                    echo "<option>" . ucfirst($dbStatus['status']) . "</option>";
+                }
+                ?>
+            </select>
+        </label>
 
-    <input type="submit" value="Submit">
-    </fieldset>
-</form>
+        <input type="submit" value="Submit">
 
+    </form>
+</section>
 
 <?php
 require_once(dirname(__FILE__) . "/../footer.php");
