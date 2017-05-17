@@ -2,7 +2,7 @@
 require_once(dirname(__FILE__) . "/../util/dbconnect.php");
 
 function getIssues(){
-    $query = "SELECT issues.issue,priorities.priority,projects.project,statuses.status
+    $query = "SELECT issues.id,issues.issue,projects.project, priorities.priority,statuses.status
               FROM issues
               LEFT JOIN complaints
                 ON issues.id = complaints.issue_id

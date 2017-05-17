@@ -12,40 +12,51 @@ $dbStatuses = getStatuses();
 
 ?>
 
-<form name="issue" method="post" action="">
-    <label>Issue</label>
-    <input name="issue">
+<section>
+    <h1> Add new issue</h1>
+    <form id="add" method="post" action="">
+        <label for="issue">
+            <span>Issue</span>
+            <input type="text" name="issue" value="" />
+        </label>
 
-    <label>Project name</label>
-    <select>
-        <?php
-        foreach($dbProjects as $dbProject) {
-            echo "<option>" . $dbProject['project'] . "</option>";
-        }
-        ?>
-    </select>
+        <label for="project">
+            <span>Project name</span>
+            <select name="project">
+                <?php
+                foreach($dbProjects as $dbProject) {
+                    echo "<option>" . ucfirst($dbProject['project']) . "</option>";
+                }
+                ?>
+            </select>
+        </label>
 
-    <label>Priority level</label>
-    <select>
-        <?php
-        foreach($dbPriorities as $dbPriority) {
-            echo "<option>" . $dbPriority['priority'] . "</option>";
-        }
-        ?>
-    </select>
+        <label for="priority">
+            <span>Priority level</span>
+            <select name="priority">
+                <?php
+                foreach($dbPriorities as $dbPriority) {
+                    echo "<option>" . ucfirst($dbPriority['priority']). "</option>";
+                }
+                ?>
+            </select>
+        </label>
 
-    <label>Status</label>
-    <select>
-        <?php
-        foreach($dbStatuses as $dbStatus) {
-            echo "<option>" . $dbStatus['status'] . "</option>";
-        }
-        ?>
-    </select>
+        <label for="status">
+            <span>Status</span>
+            <select name="status">
+                <?php
+                foreach($dbStatuses as $dbStatus) {
+                    echo "<option>" . ucfirst($dbStatus['status']) . "</option>";
+                }
+                ?>
+            </select>
+        </label>
 
-    <input type="submit" value="Submit">
-</form>
+        <input type="submit" value="Submit">
 
+    </form>
+</section>
 
 <?php
 require_once(dirname(__FILE__) . "/../footer.php");

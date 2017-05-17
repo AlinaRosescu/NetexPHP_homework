@@ -6,24 +6,16 @@ $dbItems = getPriorities();
 
 
 ?>
-
-    <table>
-        <tbody>
-        <tr>
-            <th>Issue</th>
-            <th>Priority</th>
-        </tr>
+<section>
+    <h1>Registered priorities</h1>
+    <ul id="itemList">
         <?php
         foreach($dbItems as $dbItem) {
-            echo "<tr>";
-            foreach ($dbItem as $key=>$value) {
-                echo "<td>" . $value . "</td>";
-            }
-            echo "</tr>";
+            echo "<li>" . ucfirst($dbItem['priority']) . "</li>";
         }
         ?>
-        </tbody>
-    </table>
+    </ul>
+</section>
 <?php
 require_once(dirname(__FILE__) . "/../web/footer.php");
 ?>
