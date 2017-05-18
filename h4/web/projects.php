@@ -2,6 +2,12 @@
 
 require_once(dirname(__FILE__) . "/../db_model/projects.php");
 require_once(dirname(__FILE__) . "/../web/header.php");
+
+if (!empty($_POST['submitProject'])) {
+    $project = $_POST['project'];
+    addProjects($project);
+}
+
 $dbItems = getProjects();
 ?>
 

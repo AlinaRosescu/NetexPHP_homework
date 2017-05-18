@@ -17,3 +17,15 @@ function getStatuses(){
     }
 
 }
+
+function addStatuses($status) {
+    $query = "INSERT INTO `statuses` (status) VALUES ('$status')";
+
+    $mysqlConnection = getConnection();
+    $statusAdded = mysqli_query($mysqlConnection, $query);
+
+    closeConnection($mysqlConnection);
+
+    return $statusAdded;
+
+}

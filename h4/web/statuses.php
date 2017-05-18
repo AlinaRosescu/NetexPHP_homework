@@ -2,6 +2,13 @@
 
 require_once(dirname(__FILE__) . "/../db_model/statuses.php");
 require_once(dirname(__FILE__) . "/../web/header.php");
+
+
+if (!empty($_POST['submitStatus'])) {
+    $status = $_POST['status'];
+    addStatuses($status);
+}
+
 $dbItems = getStatuses();
 ?>
 

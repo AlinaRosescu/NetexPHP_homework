@@ -1,7 +1,18 @@
 <?php
 
+require_once(dirname(__FILE__) . "/header.php");
 require_once(dirname(__FILE__) . "/../db_model/issues.php");
 require_once(dirname(__FILE__) . "/../db_model/projects.php");
+
+
+if (!empty($_POST['submitIssue'])) {
+    $issue = $_POST['issue'];
+    $project_id = $_POST['project'];
+    $priority_id = $_POST['priority'];
+    $status_id = $_POST['status'];
+    addIssue($issue, $project_id,$priority_id, $status_id);
+}
+
 $dbItems = getIssues();
 $dbProjects = getProjects();
 
@@ -13,6 +24,7 @@ $dbProjects = getProjects();
         <select>
             <option>All</option>
             <?php
+
                 foreach($dbProjects as $dbProject) {
                     echo "<option>" . ucfirst($dbProject['project']) . "</option>";
                 }
@@ -39,8 +51,8 @@ $dbProjects = getProjects();
                 <td>
                     <form id="operations" method="post" action="">
                         <input name="<?=$dbItem['id']?>" type="hidden" />
-                        <input type="submit" value="Edit" />
-                        <input type="submit" value="Delete" />
+                        <input type="submit" name="edit" value="Edit" />
+                        <input type="submit" name="delete" value="Delete" />
                     </form>
                 </td>
             </tr>

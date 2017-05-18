@@ -11,9 +11,19 @@ function getPriorities(){
 
     if($result){
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
-    }
-    else{
+    } else {
         return array();
     }
+}
+
+function addPriorities($priority) {
+    $query = "INSERT INTO `priorities` (priority) VALUES ('$priority')";
+
+    $mysqlConnection = getConnection();
+    $priorityAdded = mysqli_query($mysqlConnection, $query);
+
+    closeConnection($mysqlConnection);
+
+    return $priorityAdded;
 
 }

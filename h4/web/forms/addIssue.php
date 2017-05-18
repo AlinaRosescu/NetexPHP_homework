@@ -14,7 +14,7 @@ $dbStatuses = getStatuses();
 
 <section>
     <h1> Add new issue</h1>
-    <form id="add" method="post" action="">
+    <form id="add" method="post" action="../issues.php">
         <label for="issue">
             <span>Issue</span>
             <input type="text" name="issue" value="" />
@@ -53,7 +53,9 @@ $dbStatuses = getStatuses();
             </select>
         </label>
 
-        <input type="submit" value="Submit">
+        <div>
+            <input type="submit" name="submitIssue" value="Submit">
+        </div>
 
     </form>
 </section>

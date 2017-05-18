@@ -124,52 +124,35 @@
             width: 150px;
             text-align: left;
             float: left;
-        }
-
-        fieldset {
-            border-radius: 10px;
-            margin: 0px 0px 10px 0px;
-            border: 1px solid #A89993;
-            padding: 20px;
-            background: #FFF4F4;
-        }
-
-        fieldset legend{
-            color: #544C43;
-            border-top: 1px solid #A89993;
-            border-left: 1px solid #A89993;
-            border-right: 1px solid #A89993;
-            border-radius: 5px 5px 0px 0px;
-            background: #fff4f4;
-            padding: 0px 8px 3px 8px;
-            font-weight: bold;
-            font-size: 18px;
+            margin-bottom: 10px;
         }
 
         input, select {
-            display: block;
             float: left;
             border: 1px solid #A89993;
-            outline: none;
             color: #544C43;
             padding: 5px 8px 5px 8px;
             background: #FFEFF6;
             width:50%;
             margin-bottom: 15px;
         }
+
         input[type=submit] {
-            background: #FCE5CA;
+            display: block;
+            clear: both;
+            float: left;
+            background: #FFEFF6;
             color: #544C43;
             border: 1px solid #A89993;
             width: 100px;
             border-radius: 5px;
         }
+
         input[type=submit]:hover {
-            color: #FCE5CA;
-            background: #544C43;
+            color: #544C43;
+            background: #EFDEDF;
             border: 1px solid #A89993;
         }
-
 
 
         /*------------- TABLE ----------------*/
@@ -198,7 +181,6 @@
             color: #544C43;
             background: #FCE5CA;
         }
-
 
     </style>
 </head>

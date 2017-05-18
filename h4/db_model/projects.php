@@ -17,3 +17,15 @@ function getProjects(){
         return array();
     }
 }
+
+function addProjects($project) {
+    $query = "INSERT INTO `projects` (project) VALUES ('$project')";
+
+    $mysqlConnection = getConnection();
+    $projectAdded = mysqli_query($mysqlConnection, $query);
+
+    closeConnection($mysqlConnection);
+
+    return $projectAdded;
+
+}
